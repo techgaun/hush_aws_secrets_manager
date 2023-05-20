@@ -78,7 +78,8 @@ defmodule Hush.Provider.AwsSecretsManager do
     {:error, message}
   end
 
-  defp parse_error(_error, key) do
+  defp parse_error(error, key) do
+    IO.inspect error
     {:error, "An unknown error ocurred while fethching secret for #{key}"}
   end
 end
